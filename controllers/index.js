@@ -3,7 +3,7 @@ const SubjectController = require('./SubjectController');
 const StudentController = require('./StudentController');
 const StudentSubjectController = require('./StudentSubjectController');
 const AssignmenController = require('./AssignmentController');
-// const AssignmenAssessmentController = require('./AssignmentAssessmentController');
+const AssignmentAssessmentController = require('./AssignmentAssessmentController');
 
 const controllers = {
   department: DepartmentController,
@@ -11,7 +11,7 @@ const controllers = {
   student: StudentController,
   studentSubject: StudentSubjectController,
   assignment: AssignmenController,
-  // assignmentAssessment: AssignmenAssessmentController
+  assignmentAssessment: AssignmentAssessmentController
 };
 
 module.exports = controllers;

@@ -28,6 +28,9 @@ module.exports = (sequelize, DataTypes) => {
         url: {
             type: DataTypes.STRING,
         },
+        status: {
+          type: DataTypes.STRING,
+        },
         createdAt: {
           type: DataTypes.DATE,
           allowNull: false,
@@ -46,13 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       assigmentAssessment.belongsTo(models.student, {
         foreignKey: "studentId",
         as: "student",
-      });
-      assigmentAssessment.associate = function (models) {
-        assigmentAssessment.belongsTo(models.assignment, {
-          foreignKey: "assignmentsId",
-          as: "assignment"
-        });
-      };      
+      });     
       
     };
   
