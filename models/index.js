@@ -13,7 +13,7 @@ const subject = require('./Subject');
 const student = require('./Student');
 const studentSubject = require('./StudentSubject');
 const assignment = require('./Assignment');
-const assigmentAssessment = require('./AssignmentAssessment');
+const assignmentAssessment = require('./AssignmentAssessment');
 
 
 
