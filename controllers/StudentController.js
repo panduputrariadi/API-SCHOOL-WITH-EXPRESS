@@ -139,9 +139,9 @@ class StudentController {
       }
 
       const schema = {
-        name: "string|nullable",
-        address: "string|nullable",
-        dob: "string|nullable",
+        name: {type: "string", required: false},
+        address: {type: "string", required: false},
+        dob: {type: "string", required: false},
         departmentsId: {
           type: "number",
           ref: "departments"

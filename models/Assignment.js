@@ -46,8 +46,8 @@ module.exports = (sequelize, DataTypes) => {
     assignment.belongsToMany(models.assignmentAssessment, {
       through: "assignmentAssessment",
       foreignKey: "assignmentsId",
-      otherKey: "studentId",
-      as: "studentsAssignment"
+      otherKey: "id",
+      as: "assessment"
     });
     
   };
