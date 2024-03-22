@@ -13,7 +13,7 @@ class AssignmenController {
           },
           {
             model: model.assignmentAssessment,
-            as: 'studentsAssignment',
+            as: 'assessment',
             through: []
           }
         ],
@@ -36,6 +36,34 @@ class AssignmenController {
       });
     }
   }
+
+  async delete(req, res) {
+    try {
+      const assignmentId = req.params.id;
+      await model.assignmentAssessment.destroy({
+        where: {
+          assignmentsId: assignmentId
+        }
+      });
+  
+      // Delete assignment
+      await model.assignment.destroy({
+        where: {
+          id: assignmentId
+        }
+      });
+  
+      res.status(200).json({
+        message: "Success delete Assignment"
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({
+        message: "Internal Server Error"
+      });
+    }
+  }
+  
 }
 
 module.exports = new AssignmenController();
