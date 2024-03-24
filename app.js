@@ -14,6 +14,8 @@ var studentRouter = require('./routes/studentsRoutes');
 var studentSubjectRouter = require('./routes/studentSubjectRoutes');
 var assignmentRouter = require('./routes/assignmentsRoutes');
 var assigmentAssessmentRouter = require('./routes/assignmentAssessmentRoute');
+const { authenticateToken } = require('./middleware/authMiddleware');
+
 
 var app = express();
 
@@ -27,7 +29,7 @@ app.use(FileUpload());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/departments', departmentRouter);
+app.use('/departments', authenticateToken, departmentRouter);
 app.use('/subjects', subjectRouter);
 app.use('/students', studentRouter);
 app.use('/studentSubject', studentSubjectRouter);
