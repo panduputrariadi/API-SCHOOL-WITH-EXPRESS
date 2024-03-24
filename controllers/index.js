@@ -4,6 +4,7 @@ const StudentController = require('./StudentController');
 const StudentSubjectController = require('./StudentSubjectController');
 const AssignmenController = require('./AssignmentController');
 const AssignmentAssessmentController = require('./AssignmentAssessmentController');
+const AuthController = require("./AuthenticationController")
 
 const controllers = {
   department: DepartmentController,
@@ -11,7 +12,8 @@ const controllers = {
   student: StudentController,
   studentSubject: StudentSubjectController,
   assignment: AssignmenController,
-  assignmentAssessment: AssignmentAssessmentController
+  assignmentAssessment: AssignmentAssessmentController,
+  auth: AuthController
 };
 
 module.exports = controllers;
